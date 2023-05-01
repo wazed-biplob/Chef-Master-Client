@@ -1,0 +1,7 @@
+.chef-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+  gap: 20px;
+}

@@ -3,7 +3,10 @@ import React from "react";
 import "./Home.css";
 import Header from "../../Shared/Header";
 import { Button } from "react-bootstrap";
+import Chef from "../../Sections/Chef/Chef";
+import { useLoaderData } from "react-router-dom";
 const Home = () => {
+  const data = useLoaderData();
   return (
     <>
       <div className="banner">
@@ -23,6 +26,7 @@ const Home = () => {
           </Button>
         </div>
       </div>
+      <Chef data={data} />
     </>
   );
 };

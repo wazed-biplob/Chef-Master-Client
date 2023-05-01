@@ -1,7 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Image from "react-bootstrap/Image";
 
 const Header = () => {
   return (
@@ -10,10 +10,10 @@ const Header = () => {
         <h1 style={{ color: "lightsalmon" }}>Chef Master</h1>
       </div>
       <div className="d-flex gap-4">
-        <Link style={{ color: "lightcyan", textDecoration: "none" }} to="/">
+        <Link style={{ color: "orange", textDecoration: "none" }} to="/">
           Home
         </Link>
-        <Link style={{ color: "lightcyan", textDecoration: "none" }} to="/blog">
+        <Link style={{ color: "orange", textDecoration: "none" }} to="/blog">
           Blog
         </Link>
       </div>
