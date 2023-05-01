@@ -8,3 +8,7 @@
   height: 100vh;
   background: url("../../../src/assets/banner.jpg");
 }
+
+.banner-text {
+  margin: 100px 0 0 0;
+}
