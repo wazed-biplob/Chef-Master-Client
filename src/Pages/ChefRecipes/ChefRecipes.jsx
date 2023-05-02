@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import Header from "../../Shared/Header";
+import ChefRecipe from "../../Sections/ChefRecipe/ChefRecipe";
 
 const ChefRecipes = () => {
   const chefData = useLoaderData();
@@ -27,7 +28,7 @@ const ChefRecipes = () => {
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-title">{name}</h5>
+              <h3 className="card-title">{name}</h3>
               <hr />
               <p className="card-text">Short Bio : {bio}</p>
               <hr />
@@ -42,6 +43,7 @@ const ChefRecipes = () => {
           </div>
         </div>
       </div>
+      <ChefRecipe chefData={chefData} />
     </div>
   );
 };
