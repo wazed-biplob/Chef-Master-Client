@@ -8,13 +8,17 @@ import { HiThumbUp } from "react-icons/hi";
 import { GiCookingPot } from "react-icons/gi";
 import { GoCalendar } from "react-icons/go";
 import { BsFileTextFill } from "react-icons/bs";
+import LazyLoad from "react-lazy-load";
 
 const ChefCard = ({ chef }) => {
   const { name, pictureURL, yearsOfExperience, totalLikes, numberOfRecipes } =
     chef;
   return (
     <Card>
-      <Card.Img style={{ height: "300px" }} variant="top" src={pictureURL} />
+      <LazyLoad>
+        <Card.Img style={{ height: "300px" }} variant="top" src={pictureURL} />
+      </LazyLoad>
+
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text className="d-flex gap-4 justify-content-between align-items-center">
