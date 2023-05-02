@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Header from "../../Shared/Navbar";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
@@ -35,6 +35,7 @@ const Registration = () => {
           photoURL: photo,
         });
         form.reset();
+        return <Navigate to="/" />;
       })
       .catch((error) => setError(error.message));
   };
@@ -90,7 +91,7 @@ const Registration = () => {
             />
           </Form.Group>
           <Button variant="danger" type="submit">
-            Log in
+            Create Account
           </Button>
 
           <span className="mt-2 d-block">

@@ -1,33 +1,37 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "../../Shared/Navbar";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 
 const Login = () => {
   const { signInUser, signInWithGoogle, signInWithGitHub } =
     useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
   const [error, setError] = useState(null);
   const handleSignInWithGoogle = () => {
     signInWithGoogle()
-      .then((result) => console.log(result.user))
+      .then((result) => navigate(from, { replace: true }))
       .catch((error) => setError(error.message));
   };
   const handleSignInWithGitHub = () => {
     signInWithGitHub()
-      .then((result) => console.log(result.user))
+      .then((result) => navigate(from, { replace: true }))
       .catch((error) => console.log(error));
   };
   const handleSignIn = (e) => {
     e.preventDefault();
     const form = e.target;
-
     const email = form.email.value;
     const password = form.password.value;
 
     signInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        form.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => setError(error.message));
   };
