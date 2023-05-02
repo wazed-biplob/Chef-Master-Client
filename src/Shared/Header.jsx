@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div className="d-flex justify-content-between align-items-center p-4">
       <div>
@@ -21,7 +23,7 @@ const Header = () => {
         </Link>
       </div>
       <div className="d-flex gap-4">
-        {/* <img src={user ? '' : ''} alt='user pic'/> */}
+        <p>{user.displayName}</p>
         <Button variant="warning">Login</Button>
         <Button variant="danger">Logout</Button>
       </div>

@@ -3,6 +3,8 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../Components/Home/Home";
 import ChefRecipes from "../Pages/ChefRecipes/ChefRecipes";
+import Login from "../Pages/Login/Login";
+import Registration from "../Pages/Registration/Registration";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,8 @@ const router = createBrowserRouter([
     element: <ChefRecipes />,
     loader: ({ params }) => fetch(`http://localhost:5000/data/${params.id}`),
   },
+  { path: "/login", element: <Login /> },
+  { path: "/registration", element: <Registration /> },
 ]);
 
 export default router;

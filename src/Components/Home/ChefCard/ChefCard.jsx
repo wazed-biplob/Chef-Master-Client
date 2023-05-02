@@ -10,7 +10,6 @@ import { GoCalendar } from "react-icons/go";
 import { BsFileTextFill } from "react-icons/bs";
 
 const ChefCard = ({ chef }) => {
-  console.log(chef);
   const { name, pictureURL, yearsOfExperience, totalLikes, numberOfRecipes } =
     chef;
   return (
@@ -19,7 +18,7 @@ const ChefCard = ({ chef }) => {
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text className="d-flex gap-4 justify-content-between align-items-center">
-          <div className="d-flex align-items-center">
+          <span className="d-flex align-items-center">
             <GoCalendar
               style={{
                 fontSize: "18px",
@@ -28,8 +27,8 @@ const ChefCard = ({ chef }) => {
               }}
             />
             Experience (Y) : {yearsOfExperience}
-          </div>
-          <div>
+          </span>
+          <span>
             <HiThumbUp
               style={{
                 fontSize: "22px",
@@ -38,8 +37,8 @@ const ChefCard = ({ chef }) => {
               }}
             />
             {totalLikes}
-          </div>
-          <div>
+          </span>
+          <span>
             <GiCookingPot
               style={{
                 fontSize: "28px",
@@ -48,7 +47,7 @@ const ChefCard = ({ chef }) => {
               }}
             />
             Recipes :{numberOfRecipes}
-          </div>
+          </span>
         </Card.Text>
         <Link to={`/chef/${chef.id}`}>
           <Button variant="warning">
