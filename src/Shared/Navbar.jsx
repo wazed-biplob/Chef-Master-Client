@@ -3,6 +3,8 @@ import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider/AuthProvider";
+import ActiveLink from "../Components/Home/ActiveLink/ActiveLink";
+import "./Navbar.css";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -19,12 +21,15 @@ const Header = () => {
         </Link>
       </div>
       <div className="d-flex gap-4">
-        <Link style={{ color: "orange", textDecoration: "none" }} to="/">
+        <ActiveLink style={{ color: "orange", textDecoration: "none" }} to="/">
           Home
-        </Link>
-        <Link style={{ color: "orange", textDecoration: "none" }} to="/blog">
+        </ActiveLink>
+        <ActiveLink
+          style={{ color: "orange", textDecoration: "none" }}
+          to="/blog"
+        >
           Blog
-        </Link>
+        </ActiveLink>
       </div>
       <div className="d-flex gap-4">
         {user && (
