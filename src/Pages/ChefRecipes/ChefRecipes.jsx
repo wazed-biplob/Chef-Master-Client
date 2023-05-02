@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import Header from "../../Shared/Header";
+import Header from "../../Shared/Navbar";
 import ChefRecipe from "../../Sections/ChefRecipe/ChefRecipe";
 import { FaUser } from "react-icons/fa";
 import { HiThumbUp } from "react-icons/hi";

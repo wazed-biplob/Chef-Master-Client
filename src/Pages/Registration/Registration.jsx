@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Header from "../../Shared/Header";
+import Header from "../../Shared/Navbar";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
 const auth = getAuth();
@@ -89,17 +89,20 @@ const Registration = () => {
               required
             />
           </Form.Group>
-          <Button variant="warning" type="submit">
+          <Button variant="danger" type="submit">
             Log in
           </Button>
 
           <span className="mt-2 d-block">
             Already Registered?
-            <Link to={"/login"}> Sign In</Link>
+            <Link
+              style={{ marginLeft: "4px", textDecoration: "none" }}
+              to={"/login"}
+            >
+              Sign In
+            </Link>
           </span>
-
           <Form.Text className="text-danger">{error}</Form.Text>
-          <Form.Text className="text-success"></Form.Text>
         </Form>
       </Container>
     </div>

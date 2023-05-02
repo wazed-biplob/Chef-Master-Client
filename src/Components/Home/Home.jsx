@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import "./Home.css";
-import Header from "../../Shared/Header";
+import Header from "../../Shared/Navbar";
 import { Button } from "react-bootstrap";
 import Chef from "../../Sections/Chef/Chef";
 import { useLoaderData } from "react-router-dom";
