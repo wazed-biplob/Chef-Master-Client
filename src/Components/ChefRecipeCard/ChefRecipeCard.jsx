@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Card, ListGroup } from "react-bootstrap";
-
+import toast, { Toaster } from "react-hot-toast";
 const ChefRecipeCard = ({ recipe }) => {
+  const [favourite, setFavourite] = useState(false);
   const { recipeName, cookingMethod, ingredients, rating } = recipe;
+  const handleFavourite = () => {
+    toast("Added as Favourite Recipe!");
+    setFavourite(true);
+  };
   return (
     <div>
       <Card>
@@ -24,7 +29,15 @@ const ChefRecipeCard = ({ recipe }) => {
           </ListGroup.Item>
           <ListGroup.Item>Rating : {rating}</ListGroup.Item>
         </ListGroup>
-        <Button variant="warning">My Favourite</Button>
+        <Button
+          onClick={handleFavourite}
+          variant="warning"
+          disabled={favourite}
+        >
+          My Favourite
+        </Button>
+
+        <Toaster />
       </Card>
     </div>
   );
