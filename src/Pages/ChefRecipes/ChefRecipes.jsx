@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import Header from "../../Shared/Navbar";

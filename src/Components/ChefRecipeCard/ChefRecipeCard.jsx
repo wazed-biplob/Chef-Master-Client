@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Button, Card, ListGroup } from "react-bootstrap";
 import toast, { Toaster } from "react-hot-toast";
+import { FaRegStar, FaStar } from "react-icons/fa";
+import Rating from "react-rating";
 const ChefRecipeCard = ({ recipe }) => {
   const [favourite, setFavourite] = useState(false);
   const { recipeName, cookingMethod, ingredients, rating } = recipe;
@@ -27,7 +29,17 @@ const ChefRecipeCard = ({ recipe }) => {
             <hr />
             {cookingMethod.slice(0, 200)}...
           </ListGroup.Item>
-          <ListGroup.Item>Rating : {rating}</ListGroup.Item>
+          <ListGroup.Item>
+            <Rating
+              style={{ fontSize: "20px", color: "lightsalmon" }}
+              readonly
+              placeholderRating={Math.round(rating)}
+              emptySymbol={<FaRegStar />}
+              placeholderSymbol={<FaStar />}
+              fullSymbol={<FaStar />}
+            />{" "}
+            {rating}
+          </ListGroup.Item>
         </ListGroup>
         <Button
           onClick={handleFavourite}
