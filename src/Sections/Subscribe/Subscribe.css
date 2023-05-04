@@ -1,0 +1,17 @@
+.subscribe {
+  background: url("../../../src/assets/bestChef.jpg");
+
+  height: 90vh;
+  margin: 40px;
+}
+
+.overlay {
+  width: 60%;
+  height: 90vh;
+  background-color: rgba(241, 234, 229, 0.794);
+}
+
+.blank {
+  height: 90vh;
+  width: 40%;
+}
