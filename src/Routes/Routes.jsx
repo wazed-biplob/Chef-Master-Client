@@ -7,11 +7,13 @@ import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
 import PrivateRoutes from "./PrivateRoutes";
 import Blog from "../Pages/Blog/Blog";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    errorElement: <ErrorPage />,
     loader: () => fetch("https://chef-master-server-ten.vercel.app/data"),
   },
   {
