@@ -7,6 +7,8 @@ import ActiveLink from "../Components/Home/ActiveLink/ActiveLink";
 import "./Navbar.css";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import MyDocument from "../Pages/Blog/MyDocument";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -19,7 +21,13 @@ const Header = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="d-flex justify-content-between align-items-center p-4">
+    <div
+      className={
+        path == "/blog"
+          ? "bg-light d-flex justify-content-between align-items-center pt-2 px-4"
+          : "d-flex justify-content-between align-items-center pt-2 px-4"
+      }
+    >
       <div>
         <Link style={{ textDecoration: "none" }} to="/">
           <h1 style={{ color: "lightsalmon" }}>Chef Master</h1>
@@ -38,18 +46,27 @@ const Header = () => {
       </div>
       <div className="d-flex gap-4">
         {user && (
-          <img
-            style={{ width: "40px", height: "40px", borderRadius: "50%" }}
-            src={user.photoURL}
-            alt={user.displayName}
-          />
+          <>
+            <a
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content={user.displayName}
+            >
+              <img
+                className="profile-picture"
+                style={{ width: "40px", height: "40px", borderRadius: "50%" }}
+                src={user.photoURL}
+                alt={user.displayName}
+              />
+            </a>
+            <Tooltip id="my-tooltip" />
+          </>
         )}
         {path === "/blog" ? (
           <PDFDownloadLink
             className="d-flex align-items-center px-2 text-white"
             style={{ backgroundColor: "lightsalmon", borderRadius: "4px" }}
             document={<MyDocument />}
-            fileName="somename.pdf"
+            fileName="blog.pdf"
           >
             Download PDF
             {({ blob, url, loading, error }) =>
