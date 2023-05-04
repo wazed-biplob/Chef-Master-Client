@@ -8,6 +8,7 @@ import { HiThumbUp } from "react-icons/hi";
 import { GiCookingPot } from "react-icons/gi";
 import { GoCalendar } from "react-icons/go";
 import { BsFileTextFill } from "react-icons/bs";
+import Footer from "../../Sections/Footer/Footer";
 
 const ChefRecipes = () => {
   const chefData = useLoaderData();
@@ -66,7 +67,8 @@ const ChefRecipes = () => {
           </div>
         </div>
       </div>
-      <ChefRecipe chefData={chefData} />
+      <ChefRecipe chefData={chefData} />\
+      <Footer />
     </div>
   );
 };

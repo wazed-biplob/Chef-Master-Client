@@ -8,6 +8,7 @@ import { useLoaderData } from "react-router-dom";
 import LazyLoad from "react-lazy-load";
 import BestChef from "../../Sections/BestChef/BestChef";
 import Subscribe from "../../Sections/Subscribe/Subscribe";
+import Footer from "../../Sections/Footer/Footer";
 const Home = () => {
   const data = useLoaderData();
   return (
@@ -34,6 +35,7 @@ const Home = () => {
       <Chef data={data} />
       <BestChef data={data} />
       <Subscribe />
+      <Footer />
     </>
   );
 };
