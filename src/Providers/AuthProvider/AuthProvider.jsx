@@ -19,18 +19,23 @@ const AuthProvider = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
   const gitHubProvider = new GithubAuthProvider();
   const registerUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const signInUser = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
   const signInWithGoogle = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
   const signInWithGitHub = () => {
+    setLoading(true);
     return signInWithPopup(auth, gitHubProvider);
   };
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
   useEffect(() => {

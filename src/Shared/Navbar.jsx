@@ -1,13 +1,18 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider/AuthProvider";
 import ActiveLink from "../Components/Home/ActiveLink/ActiveLink";
 import "./Navbar.css";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import MyDocument from "../Pages/Blog/MyDocument";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const location = useLocation();
+  const path = location?.pathname;
+
   const handleLogOut = () => {
     logOut()
       .then((result) => console.log(result))
@@ -38,6 +43,21 @@ const Header = () => {
             src={user.photoURL}
             alt={user.displayName}
           />
+        )}
+        {path === "/blog" ? (
+          <PDFDownloadLink
+            className="d-flex align-items-center px-2 text-white"
+            style={{ backgroundColor: "lightsalmon", borderRadius: "4px" }}
+            document={<MyDocument />}
+            fileName="somename.pdf"
+          >
+            Download PDF
+            {({ blob, url, loading, error }) =>
+              loading ? "Loading document..." : "Download now!"
+            }
+          </PDFDownloadLink>
+        ) : (
+          ""
         )}
         {user ? (
           <Button onClick={handleLogOut} variant="secondary">

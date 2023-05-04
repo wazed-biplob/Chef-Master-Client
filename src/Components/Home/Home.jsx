@@ -6,6 +6,7 @@ import { Button } from "react-bootstrap";
 import Chef from "../../Sections/Chef/Chef";
 import { useLoaderData } from "react-router-dom";
 import LazyLoad from "react-lazy-load";
+import BestChef from "../../Sections/BestChef/BestChef";
 const Home = () => {
   const data = useLoaderData();
   return (
@@ -30,6 +31,7 @@ const Home = () => {
         </LazyLoad>
       </div>
       <Chef data={data} />
+      <BestChef data={data} />
     </>
   );
 };

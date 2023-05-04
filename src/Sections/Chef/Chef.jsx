@@ -7,7 +7,7 @@ import "./Chef.css";
 const Chef = ({ data }) => {
   return (
     <>
-      <h1 className="text-center mt-3" style={{ color: "lightsalmon" }}>
+      <h1 className="text-center mt-5" style={{ color: "lightsalmon" }}>
         Meet Our Chef
       </h1>
       <div className="chef-card">
