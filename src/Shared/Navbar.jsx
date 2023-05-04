@@ -28,12 +28,14 @@ const Header = () => {
           : "d-flex justify-content-between align-items-center pt-2 px-4"
       }
     >
-      <div>
+      <div className="d-flex align-items-center">
         <Link style={{ textDecoration: "none" }} to="/">
-          <h1 style={{ color: "lightsalmon" }}>Chef Master</h1>
+          <h1 className="logo" style={{ color: "lightsalmon" }}>
+            Chef Master
+          </h1>
         </Link>
       </div>
-      <div className="d-flex gap-4">
+      <div className="menu d-flex align-items-center gap-3">
         <ActiveLink style={{ color: "orange", textDecoration: "none" }} to="/">
           Home
         </ActiveLink>

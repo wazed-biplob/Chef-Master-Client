@@ -16,7 +16,7 @@ const Home = () => {
       <div className="banner">
         <Header />
         <LazyLoad>
-          <div className="banner-text d-flex flex-column w-50 text-white gap-4 ms-4">
+          <div className="banner-text d-flex flex-column text-white gap-4 ms-4">
             <h2>
               Discover the art of
               <span style={{ color: "lightsalmon" }}> flavour</span>

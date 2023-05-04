@@ -5,9 +5,7 @@ import { FaUser } from "react-icons/fa";
 import { GiCookingPot } from "react-icons/gi";
 import { GoCalendar, GoInfo } from "react-icons/go";
 import { HiThumbUp } from "react-icons/hi";
-import LazyLoad from "react-lazy-load";
-import Rating from "react-rating";
-import { Link } from "react-router-dom";
+import "./BestChef.css";
 
 const BestChef = ({ data }) => {
   const arr = [];
@@ -23,13 +21,13 @@ const BestChef = ({ data }) => {
     totalLikes,
     numberOfRecipes,
   } = chef;
-  console.log(chef);
+
   return (
     <>
       <h1 className="text-center mt-3" style={{ color: "lightsalmon" }}>
         Chef of the Year
       </h1>
-      <div className="bg-light d-flex flex-row m-4 p-4 border">
+      <div className="best-chef bg-light d-flex flex-row justify-content-center gap-4 m-4 p-4 border">
         <div className="d-flex align-items-center">
           <div className="card-body">
             <h3 className="card-title">
@@ -92,7 +90,7 @@ const BestChef = ({ data }) => {
           </div>
         </div>
 
-        <div className="d-flex justify-content-evenly align-items-center">
+        <div className="d-flex justify-content-center align-items-center">
           <img
             style={{ width: "400px", height: "400px" }}
             src={pictureURL}

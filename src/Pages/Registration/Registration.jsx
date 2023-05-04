@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, redirect } from "react-router-dom";
 import Header from "../../Shared/Navbar";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import { getAuth, updateProfile } from "firebase/auth";
 const auth = getAuth();
 const Registration = () => {
-  const { registerUser } = useContext(AuthContext);
+  const { registerUser, logOut } = useContext(AuthContext);
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
   const handleRegisterUser = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -34,8 +35,10 @@ const Registration = () => {
           displayName: name,
           photoURL: photo,
         });
+
         form.reset();
-        return <Navigate to="/" />;
+        const message = "User Successfully Created.";
+        setSuccess(message);
       })
       .catch((error) => setError(error.message));
   };
@@ -104,6 +107,7 @@ const Registration = () => {
             </Link>
           </span>
           <Form.Text className="text-danger">{error}</Form.Text>
+          <Form.Text className="text-secondary">{success}</Form.Text>
         </Form>
       </Container>
     </div>

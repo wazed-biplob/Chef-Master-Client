@@ -1,3 +1,13 @@
 a {
   text-decoration: none !important;
 }
+
+@media only screen and (max-width: 576px) {
+  .logo {
+    font-size: 16px;
+  }
+  .menu {
+    font-size: 12px;
+    gap: 0px !important;
+  }
+}

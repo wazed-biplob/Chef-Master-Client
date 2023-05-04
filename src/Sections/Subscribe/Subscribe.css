@@ -15,3 +15,13 @@
   height: 90vh;
   width: 40%;
 }
+
+@media only screen and (max-width: 576px) {
+  .overlay {
+    font-size: 12px;
+    width: 100%;
+  }
+  .blank {
+    display: none;
+  }
+}
