@@ -27,7 +27,7 @@ const BestChef = ({ data }) => {
       <h1 className="text-center mt-3" style={{ color: "lightsalmon" }}>
         Chef of the Year
       </h1>
-      <div className="best-chef bg-light d-flex flex-row justify-content-center gap-4 m-4 p-4 border">
+      <div className="best-chef bg-light d-flex justify-content-center gap-4 m-4 p-4 border">
         <div className="d-flex align-items-center">
           <div className="card-body">
             <h3 className="card-title">

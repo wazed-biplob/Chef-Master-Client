@@ -1,8 +1,8 @@
 .subscribe {
   background: url("../../../src/assets/bestChef.jpg");
-
   height: 90vh;
-  margin: 40px;
+  margin: 20px;
+  border-radius: 8px;
 }
 
 .overlay {
